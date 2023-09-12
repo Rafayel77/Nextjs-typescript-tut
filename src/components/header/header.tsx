@@ -1,16 +1,3 @@
-// import searchIcon from "../../assets/searchIcon.png";
-// import whiteSearch from "../../assets/whiteSearch.png";
-// import urbanIcon from "../../assets/urbanIcon.png";
-// import klor from "../../assets/klor.png";
-// import plus from "../../assets/plus.png";
-// import slaqner from "../../assets/slaqner.png";
-// import kloriX from "../../assets/kloriX.png";
-// import groupLetters from "../../assets/groupLetters.png";
-// import hamburger from "../../assets/hamburger.png";
-// import burgerYellow from "../../assets/burgerYellow.png";
-// import star from "../../assets/star.png";
-// import { navigatePages } from "./headerUtils";
-//import { useNavigate, useLocation } from "react-router-dom";
 import Image from "next/image";
 import { navigatePages } from "./headerUtils";
 import { useEffect, useState } from "react";
@@ -24,12 +11,10 @@ import { IVotingText } from "../voting/voting";
 import { ROUTES } from "../../configRoutes";
 import { handleLogIn } from "./headerUtils";
 import { logOut } from "../../firebase/auth";
-import { cardInfo } from "../../firebase/firestore";
+// import { cardInfo } from "../../firebase/firestore";
 import { useRouter } from "next/router";
 
 export default function Header() {
-  //const navigate = useNavigate();
-  //const location = useLocation();
   const router = useRouter();
   const location = router.asPath;
   const dispatch = useDispatch();
@@ -47,36 +32,36 @@ export default function Header() {
     dispatch(setInitialDataLoading(true));
   };
 
-  useEffect(() => {
-    (async () => {
-      try {
-        dispatch(setInitialDataLoading(true));
-        const data = await cardInfo();
-        dispatch(setInitialData(data));
-      } catch (error) {
-        alert(error);
-      } finally {
-        dispatch(setInitialDataLoading(false));
-      }
-    })();
-  }, []);
+//   useEffect(() => {
+//     (async () => {
+//       try {
+//         dispatch(setInitialDataLoading(true));
+//         const data = await cardInfo();
+//         dispatch(setInitialData(data));
+//       } catch (error) {
+//         alert(error);
+//       } finally {
+//         dispatch(setInitialDataLoading(false));
+//       }
+//     })();
+//   }, []);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
       if (Array.isArray(initialData)) {
         if (inputText.trim() === "") {
           dispatch(setFilteredData(initialData));
-          dispatch(setInitialDataLoading(false));
         } else {
           const filteredData = initialData.filter(({ title }: IVotingText) => title.toLowerCase().includes(inputText));
           dispatch(setFilteredData(filteredData));
         }
+        dispatch(setInitialDataLoading(false));
       }
     }, 1000);
     return () => {
       clearTimeout(timerId);
     };
-  }, [isLoggedIn, inputText, initialData, dispatch]);
+  }, [inputText, initialData, dispatch]);
 
   useEffect(() => {
     if (popupState) {

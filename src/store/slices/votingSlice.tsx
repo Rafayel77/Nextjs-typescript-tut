@@ -3,13 +3,13 @@ import { type IVotingText } from "../../components/voting/voting";
 
 export interface VotingState {
   initialData: IVotingText[] | null;
-  filteredData: IVotingText[];
+  filteredData: IVotingText[] | null;
   initialDataLoading: boolean
 }
 
 const initialState: VotingState = {
   initialData: null,
-  filteredData: [],
+  filteredData: null,
   initialDataLoading: false
 };
 

@@ -1,24 +1,38 @@
 import Voting, { type IVotingText } from "../components/voting/voting";
 import { useSelector, useDispatch } from "react-redux";
-// import { type RootState } from "../store/store";
 import { Loading } from "../components/loading";
 import { useEffect, useState } from "react";
-import { setInitialDataLoading } from "../store/slices/votingSlice";
+import { setInitialDataLoading, setInitialData } from "../store/slices/votingSlice";
+import { cardInfo } from "@/firebase/firestore";
+
+export async function getStaticProps() {
+  try {
+    const data = await cardInfo();
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
+}
 
 
-export default function Home() {
+export default function Home({ data }: any) {
 
   const filteredData = useSelector(({ voting: { filteredData } }) => filteredData);
   const initialDataLoading = useSelector(({ voting: {initialDataLoading} }) => initialDataLoading);
   const dispatch = useDispatch();
-  const [loadData, setLoadData] = useState(false);
 
-  useEffect(() => {
-    if(initialDataLoading) {
-      dispatch(setInitialDataLoading(false));
-      setLoadData(true);
-    }
-  }, [filteredData]);
+      useEffect(() => {
+        dispatch(setInitialData(data))
+        dispatch(setInitialDataLoading(false));
+  }, []);
 
   return (
     <div>
@@ -31,11 +45,11 @@ export default function Home() {
               Vote for add new words to the dictionary
           </p>
         </div>
-        {initialDataLoading ? (
-          <Loading />
-        ) : (
-          <div className="w-full">
-            {filteredData.length > 0 ? (
+        {
+          !filteredData || initialDataLoading ? <Loading /> : 
+          filteredData && filteredData.length ? (
+            <div className="w-full">
+            {filteredData.length > 0 && (
               filteredData.map(
                 (
                   {cardId, title, text, tags, example, username, created }: IVotingText,
@@ -58,14 +72,15 @@ export default function Home() {
                   />
                 )
               )
-            ) : (
-              loadData ? (
+            )
+                }
+            </div>
+            ) : !filteredData.length && 
                 <p className="flex justify-center mt-[9%] font-montserrat  text-4xl">
                 Not Found !
                 </p>
-              ): <Loading />)}
-          </div>
-        )}
+        } 
+    
       </div>
     </div>
   );
