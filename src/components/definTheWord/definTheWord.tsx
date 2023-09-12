@@ -4,7 +4,7 @@ import { RootState } from "../../store/store";
 import { setPopupHeader } from "../../store/slices/popupSlice";
 import { useState } from "react";
 //import { useNavigate } from "react-router-dom";
-import { ROUTES } from "../../configRoutes";
+import { ROUTES } from "../../constants/configRoutes";
 import { delayStateChange } from "@/globalFunctions/delayStateChanges";
 import Image from "next/image";
 import { useRouter } from "next/router";

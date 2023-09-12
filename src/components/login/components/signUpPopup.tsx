@@ -1,6 +1,5 @@
-//import close from "../../../assets/close.png";
 import { useState } from "react";
-import { FIELDS } from "../../../constants";
+import { FIELDS } from "../../../constants/constants";
 import { signUp } from "../../../firebase/auth";
 import { Loading } from "../../loading";
 import { delayStateChange } from "@/globalFunctions/delayStateChanges";
@@ -41,7 +40,7 @@ export function SignUpPopup({ setIsRegistrationOpen }: SignUpPopupProps) {
 
   const handleKeyPress = (event: { keyCode: number }) => {
     if (event.keyCode === 13) {
-      handleSignup(email,password, username);
+      handleSignup(email, password, username);
     }
   };
 

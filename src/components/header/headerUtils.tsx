@@ -1,6 +1,6 @@
 //import { Location, NavigateFunction } from "react-router-dom";
 import { NextRouter } from "next/router";
-import { ROUTES } from "../../configRoutes";
+import { ROUTES } from "../../constants/configRoutes";
 
 export const navigatePages = (router: NextRouter, prevPath: string, nextPath: string) => {
   if (prevPath !== nextPath) {

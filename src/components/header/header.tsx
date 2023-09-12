@@ -4,14 +4,13 @@ import { useEffect, useState } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import PopupHeader from "../popupHeader/popupHeader";
 import { useDispatch, useSelector } from "react-redux";
-import { setInitialData, setFilteredData, setInitialDataLoading, } from "../../store/slices/votingSlice";
+import { setFilteredData, setInitialDataLoading, } from "../../store/slices/votingSlice";
 import { setPopupHeader } from "../../store/slices/popupSlice";
 import { RootState } from "../../store/store";
 import { IVotingText } from "../voting/voting";
-import { ROUTES } from "../../configRoutes";
+import { ROUTES } from "../../constants/configRoutes";
 import { handleLogIn } from "./headerUtils";
 import { logOut } from "../../firebase/auth";
-// import { cardInfo } from "../../firebase/firestore";
 import { useRouter } from "next/router";
 
 export default function Header() {
@@ -99,13 +98,13 @@ export default function Header() {
                     setburger(!burger);
                   }}
                 >
-                  <div className="mb-1 md:w-8 md:h-0.5">
+                  <div className="mb-1 md:w-auto md:h-auto">
                     <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} className="ml-2"/>
                   </div>
-                  <div className="mb-1 md:w-8 md:h-0.5">
+                  <div className="mb-1 md:w-auto md:h-auto">
                     <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} className="ml-2"/>
                   </div>
-                  <div className="mb-1 md:w-8 md:h-0.5">
+                  <div className="mb-1 md:w-auto md:h-auto">
                     <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} className="ml-2"/>
                   </div>
                 </div>
@@ -122,13 +121,13 @@ export default function Header() {
                     setburger(!burger);
                   }}
                 >
-                  <div className="mb-1 md:w-8 md:h-0.5">
+                  <div className="mb-1 md:w-auto md:h-auto">
                     <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} className="ml-2"/>
                   </div>
-                  <div  className="mb-1 md:w-8 md:h-0.5">
+                  <div  className="mb-1 md:w-auto md:h-auto">
                     <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} className="ml-2"/>
                   </div>
-                  <div className="mb-1 md:w-8 md:h-0.5">
+                  <div className="mb-1 md:w-auto md:h-auto">
                     <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} className="ml-2"/>
                   </div>
                 </div>

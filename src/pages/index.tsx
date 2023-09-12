@@ -1,13 +1,17 @@
 import Voting, { type IVotingText } from "../components/voting/voting";
 import { useSelector, useDispatch } from "react-redux";
 import { Loading } from "../components/loading";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { setInitialDataLoading, setInitialData } from "../store/slices/votingSlice";
-import { cardInfo } from "@/firebase/firestore";
+import { getCardInfo } from "@/firebase/firestore";
+
+interface HomeProps {
+  data: IVotingText[];
+}
 
 export async function getStaticProps() {
   try {
-    const data = await cardInfo();
+    const data = await getCardInfo();
     return {
       props: {
         data,
@@ -23,7 +27,7 @@ export async function getStaticProps() {
 }
 
 
-export default function Home({ data }: any) {
+export default function Home({ data }: HomeProps) {
 
   const filteredData = useSelector(({ voting: { filteredData } }) => filteredData);
   const initialDataLoading = useSelector(({ voting: {initialDataLoading} }) => initialDataLoading);

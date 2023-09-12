@@ -1,10 +1,8 @@
-/* eslint-disable no-console */
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { getFirestore, setDoc, doc, getDoc } from "firebase/firestore";
-import app from "../firebase";
-import { ROUTES } from "../configRoutes";
+import app from "./firebase";
+import { ROUTES } from "../constants/configRoutes";
 import { setShowAlert } from "../store/slices/showAlertSlice";
-//import { NavigateFunction } from "react-router-dom";
 import { setLogin, setLogout, setUser, setUserId, setUsername } from "../store/slices/userSlice";
 import store from "../store/store";
 import { NextRouter } from "next/router";

@@ -1,11 +1,10 @@
-//import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { SignUpPopup } from "./signUpPopup";
 import { delayStateChange } from "@/globalFunctions/delayStateChanges";
-import { FIELDS } from "@/constants";
+import { FIELDS } from "@/constants/constants";
 import { signIn } from "@/firebase/auth";
-import { ROUTES } from "@/configRoutes";
+import { ROUTES } from "@/constants/configRoutes";
 import { Loading } from "@/components/loading";
 import { setShowAlert } from "@/store/slices/showAlertSlice";
 import { useRouter } from "next/router";
@@ -16,7 +15,6 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const [isRegistrationOpen, setIsRegistrationOpen] = useState(false);
   const [showInvalid, setShowInvalid] = useState(false);
-  //const navigate = useNavigate();
   const router = useRouter();
   const dispatch = useDispatch();
 

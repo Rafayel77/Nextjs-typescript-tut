@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import { addDoc, collection, query, getDocs, updateDoc, orderBy, doc, getDoc, serverTimestamp} from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "./firebase";
 
 export const setCardVote = async (userEmail: string, title: string, text: string, example: string, tags: string[], username: string,) => {
   try {
@@ -208,7 +208,7 @@ export const updateCardUserIds = async (cardId: string, userId: string, action: 
 };
 
 
-export const cardInfo = async () => {
+export const getCardInfo = async () => {
   const collectionRef = collection(db, "cards");
   const q = query(collectionRef, orderBy("created", "desc"));
   try {

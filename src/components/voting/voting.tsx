@@ -1,6 +1,6 @@
 // import butverev from "../../../public/assets/butverev.png";
 // import butnerqev from "../../assets/butnerqev.png";
-import { FIELDS } from "@/constants";
+import { FIELDS } from "@/constants/constants";
 import VotingButtom from "./components/votingButtom";
 import { LikeComponent } from "./components/likeComponent";
 import { delayStateChange } from "@/globalFunctions/delayStateChanges";
