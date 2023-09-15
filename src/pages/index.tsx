@@ -33,9 +33,9 @@ export default function Home({ data }: HomeProps) {
   const initialDataLoading = useSelector(({ voting: {initialDataLoading} }) => initialDataLoading);
   const dispatch = useDispatch();
 
-      useEffect(() => {
-        dispatch(setInitialData(data))
-        dispatch(setInitialDataLoading(false));
+  useEffect(() => {
+    dispatch(setInitialData(data));
+    dispatch(setInitialDataLoading(false));
   }, []);
 
   return (
@@ -50,41 +50,40 @@ export default function Home({ data }: HomeProps) {
           </p>
         </div>
         {
-          !filteredData || initialDataLoading ? <Loading /> : 
-          filteredData && filteredData.length ? (
-            <div className="w-full">
-            {filteredData.length > 0 && (
-              filteredData.map(
-                (
-                  {cardId, title, text, tags, example, username, created }: IVotingText,
-                  index: number
-                ) => (
-                  <Voting
-                    key={index}
-                    cardId={cardId}
-                    title={title}
-                    text={text}
-                    tags={tags}
-                    example={example}
-                    username={username}
-                    likeState={0}
-                    dislikeState={0}
-                    created={created}
-                    addItCountI={0}
-                    keepOutCountI={0}
-                    cantDecideCountI={0}
-                  />
+          !filteredData || initialDataLoading ? <Loading /> :
+            filteredData && filteredData.length ? (
+              <div className="w-full">
+                {filteredData.length > 0 && (
+                  filteredData.map(
+                    (
+                      {cardId, title, text, tags, example, username, created }: IVotingText,
+                      index: number
+                    ) => (
+                      <Voting
+                        key={index}
+                        cardId={cardId}
+                        title={title}
+                        text={text}
+                        tags={tags}
+                        example={example}
+                        username={username}
+                        likeState={0}
+                        dislikeState={0}
+                        created={created}
+                        addItCountI={0}
+                        keepOutCountI={0}
+                        cantDecideCountI={0}
+                      />
+                    )
+                  )
                 )
-              )
-            )
                 }
-            </div>
-            ) : !filteredData.length && 
+              </div>
+            ) : !filteredData.length &&
                 <p className="flex justify-center mt-[9%] font-montserrat  text-4xl">
                 Not Found !
                 </p>
-        } 
-    
+        };
       </div>
     </div>
   );

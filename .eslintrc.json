@@ -29,7 +29,6 @@
       "semi": ["warn", "always"],
       "react/react-in-jsx-scope": ["off", "always"],
       "react/no-unescaped-entities": 0,
-      "indent": ["warn", 2],
       "no-trailing-spaces": "warn",
       "no-console": "warn",
       "eol-last": ["error", "always"]
