@@ -31,20 +31,6 @@ export default function Header() {
     dispatch(setInitialDataLoading(true));
   };
 
-//   useEffect(() => {
-//     (async () => {
-//       try {
-//         dispatch(setInitialDataLoading(true));
-//         const data = await cardInfo();
-//         dispatch(setInitialData(data));
-//       } catch (error) {
-//         alert(error);
-//       } finally {
-//         dispatch(setInitialDataLoading(false));
-//       }
-//     })();
-//   }, []);
-
   useEffect(() => {
     const timerId = setTimeout(() => {
       if (Array.isArray(initialData)) {
@@ -89,30 +75,30 @@ export default function Header() {
     <div>
       <div className="flex items-center justify-center bg-[#1e2538] w-full h-16">
         {!burger ? (
-          <div className="ml-2">
+          <div>
             <div className=" relative px-3 md:px-5 mt-3 h-9 md:h-11 rounded-t">
-              <div className="absolute rounded- top-4 -translate-x-1/2 -translate-y-1/2">
+              <div className="absolute rounded-md top-4 -translate-x-1/2 -translate-y-1/2">
                 <div
                   className="cursor"
                   onClick={() => {
                     setburger(!burger);
                   }}
                 >
-                  <div className="mb-1 md:w-auto md:h-auto">
-                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} className="ml-2"/>
+                  <div className="mb-1 md:w-auto md:h-auto ml-0.5">
+                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1}/>
                   </div>
-                  <div className="mb-1 md:w-auto md:h-auto">
-                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} className="ml-2"/>
+                  <div className="mb-1 md:w-auto md:h-auto ml-0.5">
+                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1}/>
                   </div>
-                  <div className="mb-1 md:w-auto md:h-auto">
-                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} className="ml-2"/>
+                  <div className="mb-1 md:w-auto md:h-auto ml-0.5">
+                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1}/>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         ) : (
-          <div className="ml-2">
+          <div>
             <div className=" relative px-3 md:px-5 mt-10 md:mt-20 h-24 md:h-28 rounded-t bg-white">
               <div className="absolute bg-white rounded-md top-14 -translate-x-1/2 -translate-y-1/2">
                 <div
@@ -121,20 +107,20 @@ export default function Header() {
                     setburger(!burger);
                   }}
                 >
-                  <div className="mb-1 md:w-auto md:h-auto">
-                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} className="ml-2"/>
+                  <div className="mb-1 md:w-auto md:h-auto ml-0.5">
+                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1}/>
                   </div>
-                  <div  className="mb-1 md:w-auto md:h-auto">
-                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} className="ml-2"/>
+                  <div  className="mb-1 md:w-auto md:h-auto ml-0.5">
+                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1}/>
                   </div>
-                  <div className="mb-1 md:w-auto md:h-auto">
-                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} className="ml-2"/>
+                  <div className="mb-1 md:w-auto md:h-auto ml-0.5">
+                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1}/>
                   </div>
                 </div>
-                <div className="cursor mt-6 md:mt-7 ml-2">
+                <div className="cursor mt-6 md:mt-7">
                   <Image src="/assets/star.png" alt="star" width={20} height={0.5}/>
                 </div>
-                <div  className="cursor mt-4 ml-2">
+                <div  className="cursor mt-4">
                   <Image src="/assets/slaqner.png" alt="slackIcon" width={20} height={0.5}/>
                 </div>
               </div>
