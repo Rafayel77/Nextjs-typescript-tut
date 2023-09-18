@@ -163,7 +163,7 @@ export default function Voting({cardId, title, text, example, tags, username, li
           {likeDIslikeloading ? <div className="ml-5"><Loading /></div> : (
             <>
               <LikeComponent
-                img="/assets/butVerev.png"
+                img={"/assets/butVerev.png"}
                 alt="butVerev"
                 count={likeCount}
                 handleLikeUnlike={handleLike}
