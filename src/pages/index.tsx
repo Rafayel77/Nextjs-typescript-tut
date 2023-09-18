@@ -12,6 +12,7 @@ interface HomeProps {
 export async function getStaticProps() {
   try {
     const data = await getCardInfo();
+    console.log("getStaticProps called with data:", data);
     return {
       props: {
         data,
