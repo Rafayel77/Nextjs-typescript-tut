@@ -12,6 +12,7 @@ interface HomeProps {
 export async function getStaticProps() {
   try {
     const data = await getCardInfo();
+    console.log("getStaticProps called with data:", data);
     return {
       props: {
         data,
@@ -51,11 +52,11 @@ export default function Home({ data }: HomeProps) {
           </p>
         </div>
         {
-          !data || initialDataLoading ? <Loading /> :
-            data && data.length ? (
+          !filteredData || initialDataLoading ? <Loading /> :
+            filteredData && filteredData.length ? (
               <div className="w-full">
-                {data.length > 0 && (
-                  data.map(
+                {filteredData.length > 0 && (
+                  filteredData.map(
                     (
                       {cardId, title, text, tags, example, username, created }: IVotingText,
                       index: number
@@ -80,7 +81,7 @@ export default function Home({ data }: HomeProps) {
                 )
                 }
               </div>
-            ) : !data.length &&
+            ) : !filteredData.length &&
                 <p className="flex justify-center mt-[9%] font-montserrat  text-4xl">
                 Not Found !
                 </p>

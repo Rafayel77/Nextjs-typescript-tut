@@ -31,22 +31,22 @@ export default function Header() {
     dispatch(setInitialDataLoading(true));
   };
 
-  // useEffect(() => {
-  //   const timerId = setTimeout(() => {
-  //     if (Array.isArray(initialData)) {
-  //       if (inputText.trim() === "") {
-  //         dispatch(setFilteredData(initialData));
-  //       } else {
-  //         const filteredData = initialData.filter(({ title }: IVotingText) => title.toLowerCase().includes(inputText));
-  //         dispatch(setFilteredData(filteredData));
-  //       }
-  //       dispatch(setInitialDataLoading(false));
-  //     }
-  //   }, 1000);
-  //   return () => {
-  //     clearTimeout(timerId);
-  //   };
-  // }, [inputText, initialData, dispatch]);
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      if (Array.isArray(initialData)) {
+        if (inputText.trim() === "") {
+          dispatch(setFilteredData(initialData));
+        } else {
+          const filteredData = initialData.filter(({ title }: IVotingText) => title.toLowerCase().includes(inputText));
+          dispatch(setFilteredData(filteredData));
+        }
+        dispatch(setInitialDataLoading(false));
+      }
+    }, 1000);
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [inputText, initialData, dispatch]);
 
   useEffect(() => {
     if (popupState) {
