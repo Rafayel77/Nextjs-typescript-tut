@@ -40,7 +40,7 @@ export default function Home({ data }: HomeProps) {
   useEffect(() => {
     dispatch(setInitialData(data));
     dispatch(setInitialDataLoading(false));
-  }, [data, dispatch, initialData]);
+  }, [data, dispatch, initialData, filteredData]);
 
   return (
     <div>
