@@ -85,13 +85,13 @@ export default function Header() {
                   }}
                 >
                   <div className="mb-1 md:w-auto md:h-auto ml-0.5">
-                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} style={{ maxWidth: "17px", maxHeight: "17px", width: "auto", height: "auto" }}/>
+                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} />
                   </div>
                   <div className="mb-1 md:w-auto md:h-auto ml-0.5">
-                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} style={{ maxWidth: "17px", maxHeight: "17px", width: "auto", height: "auto" }}/>
+                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} />
                   </div>
                   <div className="mb-1 md:w-auto md:h-auto ml-0.5">
-                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} style={{ maxWidth: "17px", maxHeight: "17px", width: "auto", height: "auto" }}/>
+                    <Image src="/assets/burgerYellow.png" alt="burgYellow" width={17} height={1} />
                   </div>
                 </div>
               </div>
@@ -108,13 +108,13 @@ export default function Header() {
                   }}
                 >
                   <div className="mb-1 md:w-auto md:h-auto ml-0.5">
-                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1}  style={{ maxWidth: "17px", maxHeight: "17px", width: "auto", height: "auto" }}/>
+                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} />
                   </div>
                   <div  className="mb-1 md:w-auto md:h-auto ml-0.5">
-                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1}  style={{ maxWidth: "17px", maxHeight: "17px", width: "auto", height: "auto" }}/>
+                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} />
                   </div>
                   <div className="mb-1 md:w-auto md:h-auto ml-0.5">
-                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} style={{ maxWidth: "17px", maxHeight: "17px", width: "auto", height: "auto" }}/>
+                    <Image src="/assets/hamburger.png" alt="burgBlack" width={17} height={1} />
                   </div>
                 </div>
                 <div className="cursor mt-6 md:mt-7">
