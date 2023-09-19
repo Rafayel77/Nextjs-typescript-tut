@@ -4,6 +4,7 @@ import { Loading } from "../components/loading";
 import { useEffect } from "react";
 import { setInitialDataLoading, setInitialData } from "../store/slices/votingSlice";
 import { getCardInfo } from "@/firebase/firestore";
+import { RootState } from "@/store/store";
 
 interface HomeProps {
   data: IVotingText[];
@@ -33,12 +34,13 @@ export default function Home({ data }: HomeProps) {
 
   const filteredData = useSelector(({ voting: { filteredData } }) => filteredData);
   const initialDataLoading = useSelector(({ voting: {initialDataLoading} }) => initialDataLoading);
+  const initialData = useSelector(({ voting: { initialData } }: RootState) => initialData );
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(setInitialData(data));
     dispatch(setInitialDataLoading(false));
-  }, [data, dispatch, filteredData]);
+  }, [data, dispatch, initialData]);
 
   return (
     <div>
