@@ -38,7 +38,7 @@ export default function Home({ data }: HomeProps) {
   useEffect(() => {
     dispatch(setInitialData(data));
     dispatch(setInitialDataLoading(false));
-  }, [data, dispatch]);
+  }, [data, dispatch, filteredData]);
 
   return (
     <div>
