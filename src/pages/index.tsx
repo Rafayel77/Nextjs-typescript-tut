@@ -21,7 +21,7 @@ export async function getStaticProps() {
   } catch (error) {
     return {
       props: {
-        data: [],
+        data: []
       },
     };
   }
