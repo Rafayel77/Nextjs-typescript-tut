@@ -53,7 +53,7 @@ export default function PopupHeader() {
 
     const { title, text, example, tags } = newVote;
 
-    if (title && text && example && tags && Array.isArray(initialData)) {
+    if (title && text && example && tags.length && Array.isArray(initialData)) {
 
       const cardId = await setCardVote(userEmail, title, text, example, tags, username);
 

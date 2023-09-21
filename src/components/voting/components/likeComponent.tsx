@@ -13,7 +13,8 @@ export function LikeComponent({ img, alt, count, handleLikeUnlike, disabled }: I
   return (
     <div>
       <div className="mb-2">
-        <Image className={`cursor ${disabled ? "disabled" : ""}`} onClick={handleLikeUnlike} src={img} alt={alt} width={28} height={28} />
+        <Image className={`cursor ${disabled ? "disabled" : ""}`} onClick={handleLikeUnlike} src={img} alt={alt} width={28} height={28}
+        />
         <p className=" mt-1 ml-2">{count}</p>
       </div>
     </div>

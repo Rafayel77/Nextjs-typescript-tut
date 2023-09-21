@@ -16,6 +16,7 @@ export async function getStaticProps() {
       props: {
         data,
       },
+      revalidate: 10,
     };
   } catch (error) {
     return {
@@ -83,7 +84,7 @@ export default function Home({ data }: HomeProps) {
                 <p className="flex justify-center mt-[9%] font-montserrat  text-4xl">
                 Not Found !
                 </p>
-        };
+        }
       </div>
     </div>
   );
